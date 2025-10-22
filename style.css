@@ -24,6 +24,7 @@ body::before {
   z-index: -1;
 }
 
+/* Updated Hero Section with Separate Header Image */
 .hero {
   height: 65vh;
   display: flex;
@@ -31,11 +32,24 @@ body::before {
   justify-content: center;
   text-align: center;
   color: white;
-  background: rgba(0,0,0,0.6);
+  background: url('images/header-bg.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5); /* Dark overlay for readability */
+  z-index: 0;
+  border-radius: inherit;
 }
 
 .hero .overlay {
   padding: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
