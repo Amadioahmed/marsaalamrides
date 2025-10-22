@@ -4,11 +4,15 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   color: #333;
   line-height: 1.6;
-  background: url('images/main-bg.jpg') no-repeat center center fixed;
+  background: #e0f7fa url('images/main-bg.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -16,7 +20,7 @@ body::before {
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.3); /* Reduced opacity for better visibility */
   z-index: -1;
 }
 
