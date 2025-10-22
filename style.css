@@ -139,7 +139,6 @@ h2 {
   background: #1ebe5d;
 }
 
-/* Booking Section */
 .booking-section {
   background: linear-gradient(135deg, #f0f9ff, #d0f0e0);
   padding: 40px 20px;
@@ -178,7 +177,6 @@ h2 {
   background-color: #1ebe5d;
 }
 
-/* Floating WhatsApp Icon */
 .floating-whatsapp {
   position: fixed;
   bottom: 20px;
