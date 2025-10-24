@@ -20,9 +20,9 @@ jobs:
           output-file: sitemap.xml
           include-html: true
           include-images: true
-          include-pdf: false
           include-css: true
           include-js: true
+          include-pdf: false
           include-json: false
           include-md: false
           include-txt: false
