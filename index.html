@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@300;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- ✅ Structured Data for SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -18,16 +20,28 @@
     "name": "Waleed Marsa Alam Taxi",
     "url": "https://marsaalam.site",
     "telephone": "+20 120 072 0224",
+    "image": "https://marsaalam.site/images/limousine.jpg",
+    "description": "Reliable taxi, airport transfers, and luxury tours in Marsa Alam, Egypt.",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Main Street",
       "addressLocality": "Marsa Alam",
+      "addressRegion": "Red Sea Governorate",
+      "postalCode": "84721",
       "addressCountry": "EG"
     },
-    "areaServed": "Marsa Alam, Red Sea Governorate",
-    "availableLanguage": ["en", "ar"],
+    "areaServed": {
+      "@type": "Place",
+      "name": "Marsa Alam"
+    },
+    "availableLanguage": [
+      { "@type": "Language", "name": "English" },
+      { "@type": "Language", "name": "Arabic" },
+      { "@type": "Language", "name": "Italian" },
+      { "@type": "Language", "name": "German" }
+    ],
     "sameAs": [
-      "https://www.facebook.com/marsa.alam.taxi.2024",
-      "https://wa.me/201200720224"
+      "https://www.facebook.com/marsa.alam.taxi.2024"
     ]
   }
   </script>
