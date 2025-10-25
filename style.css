@@ -1,32 +1,178 @@
+:root {
+  /* Color Palette */
+  --primary-color: #FFCC00; /* Yellow/Gold for highlights */
+  --secondary-color: #004d40; /* Dark Teal for contrast */
+  --whatsapp-color: #25D366;
+  --whatsapp-hover: #1ebe5d;
+  --text-color: #333;
+  --background-light: #f4f8fb;
+
+  /* Spacing */
+  --spacing-unit: 1rem;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #333;
+  color: var(--text-color);
   line-height: 1.6;
-  background: #e0f7fa url('images/main-bg.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background-color: var(--background-light);
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.3); /* Reduced opacity for better visibility */
-  z-index: -1;
+/* --- Utility Classes & Base Styling --- */
+
+/* Standardized Button Styling */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px; /* Pill-shaped buttons */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
-/* Updated Hero Section with Separate Header Image */
+.primary-btn {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.primary-btn:hover {
+  background: #e6b800;
+  transform: translateY(-2px);
+}
+
+.whatsapp-btn, .mobile-whatsapp-btn {
+  background-color: var(--whatsapp-color);
+  color: white;
+  font-size: 1.1rem;
+}
+
+.whatsapp-btn:hover, .mobile-whatsapp-btn:hover {
+  background-color: var(--whatsapp-hover);
+  transform: translateY(-2px);
+}
+
+.card-btn {
+  padding: 0.6rem 1.2rem;
+  background: var(--whatsapp-color);
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.card-btn:hover {
+  background: var(--whatsapp-hover);
+}
+
+.large-btn {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+}
+
+h2 {
+  margin: 3rem 0 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Raleway', sans-serif;
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--primary-color);
+  display: inline-block;
+  padding-bottom: 5px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* to center the block element */
+}
+
+/* --- Navigation Bar --- */
+.top-contact-bar {
+    background: var(--secondary-color);
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-size: 0.9rem;
+    display: none; /* Hidden on large screens, shown on mobile */
+}
+
+.top-contact-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.mobile-whatsapp-btn {
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: var(--whatsapp-color);
+    box-shadow: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding-bottom: 3px;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Translation Widget Styling --- */
+.translation-widget {
+    text-align: right; 
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- Hero Section --- */
 .hero {
-  height: 65vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,9 +187,8 @@ body::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5); /* Dark overlay for readability */
+  background: rgba(0,0,0,0.6); 
   z-index: 0;
-  border-radius: inherit;
 }
 
 .hero .overlay {
@@ -54,57 +199,61 @@ body::before {
 
 .hero h1 {
   font-family: 'Raleway', sans-serif;
-  font-size: 2.5rem;
-  line-height: 1.3;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 0.5rem;
 }
 
 .hero p {
-  margin: 1rem 0;
-  font-size: 1.1rem;
+  margin: 1rem 0 2rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 300;
 }
 
-.hero-button {
-  padding: 0.8rem 1.5rem;
-  background: #25D366;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  transition: background 0.3s;
-  cursor: pointer;
-}
-
-.hero-button:hover {
-  background: #1ebe5d;
-}
-
+/* --- Intro Section --- */
 .intro {
-  max-width: 850px;
+  max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
   background: #fff;
-  border-left: 6px solid #ffcc00;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-left: 8px solid var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   text-align: center;
+  font-size: 1.15rem;
 }
 
-h2 {
-  margin: 2rem 0 1rem;
+/* --- Booking Section --- */
+.booking-section {
+  background: linear-gradient(135deg, var(--background-light), #e6ffe6);
+  padding: 40px 20px;
   text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  max-width: 650px;
+}
+
+.booking-section h2 {
   font-size: 1.8rem;
-  font-family: 'Raleway', sans-serif;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  border-bottom: none;
 }
 
-.service-listings,
-.activity-listings {
+.booking-section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* --- Service & Activity Cards (Card Grid) --- */
+.card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 3rem 20px;
   max-width: 1200px;
   margin: 0 auto;
-  justify-content: center;
 }
 
 .service-card,
@@ -113,15 +262,22 @@ h2 {
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
   text-align: center;
   position: relative;
-  min-height: 280px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.service-card:hover,
+.activity-card:hover {
+    transform: translateY(-5px);
 }
 
 .service-card::before,
@@ -129,8 +285,8 @@ h2 {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5);
-  border-radius: 10px;
+  background: rgba(0,0,0,0.55);
+  border-radius: 12px;
   z-index: 0;
 }
 
@@ -140,76 +296,154 @@ h2 {
   z-index: 1;
 }
 
-.details-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background: #25D366;
+.service-card h3,
+.activity-card h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-card p,
+.activity-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+  background-color: var(--secondary-color);
   color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background 0.3s;
-  cursor: pointer;
-}
-
-.details-button:hover {
-  background: #1ebe5d;
-}
-
-.booking-section {
-  background: linear-gradient(135deg, #f0f9ff, #d0f0e0);
-  padding: 40px 20px;
+  padding: 30px 20px;
   text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  max-width: 600px;
+  margin-top: 40px;
 }
 
-.booking-section h2 {
-  font-size: 28px;
-  color: #004d40;
-  margin-bottom: 10px;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.booking-section p {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 20px;
+.site-footer p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
 }
 
-.whatsapp-button {
-  background-color: #25D366;
-  color: white;
-  font-size: 18px;
-  padding: 12px 24px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+.footer-links a,
+.footer-links span {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.whatsapp-button:hover {
-  background-color: #1ebe5d;
+.footer-links a:hover {
+    color: var(--primary-color);
 }
 
+.social-link i,
+.contact-info i {
+    margin-right: 5px;
+}
+
+/* Adjusting footer buttons */
+.site-footer .primary-btn {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    margin-right: 15px;
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+/* --- Floating WhatsApp Icon --- */
 .floating-whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25D366;
+  background-color: var(--whatsapp-color);
   color: white;
   font-size: 28px;
-  padding: 14px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   z-index: 999;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  animation: pulse 2s infinite;
 }
 
 .floating-whatsapp:hover {
-  background-color: #1ebe5d;
+  background-color: var(--whatsapp-hover);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+    display: none; /* Hide traditional navbar on small screens */
+  }
+
+  .top-contact-bar {
+      display: flex; /* Show the mobile contact bar */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    height: 50vh;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .intro {
+    margin: 2rem 15px;
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+  }
+
+  .card-grid {
+    padding: 20px 15px;
+    grid-template-columns: 1fr; /* Stack cards vertically */
+  }
+
+  .floating-whatsapp {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .site-footer .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .site-footer .primary-btn {
+    margin: 0;
+  }
 }
