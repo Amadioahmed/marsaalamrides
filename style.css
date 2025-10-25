@@ -133,7 +133,17 @@ h2 {
   position: sticky;
   top: 0;
   z-index: 50;
+  /* ENHANCEMENT: Add transition for smooth scroll effect */
+  transition: all 0.3s ease;
 }
+
+/* ENHANCEMENT: Style when scrolled (Inspired by Source) */
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 10px 40px; /* Make it slightly thinner on scroll */
+}
+
 
 .logo {
   font-family: 'Raleway', sans-serif;
@@ -308,6 +318,72 @@ h2 {
     font-size: 0.95rem;
     margin-bottom: 1rem;
 }
+
+/* --- ENHANCEMENT: Social Proof Section Styling --- */
+.social-proof-section {
+    background-color: var(--background-light);
+    padding: 4rem 20px;
+    margin-top: 2rem;
+}
+
+.social-proof-section h2 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.section-subtext {
+    text-align: center;
+    max-width: 800px;
+    margin: -1rem auto 2rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.review-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border-top: 4px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.review-card h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.review-card p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.review-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    background: #f0f0f0;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.review-link:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
 
 /* --- Footer --- */
 .site-footer {
