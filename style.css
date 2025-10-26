@@ -5,7 +5,7 @@
   --whatsapp-color: #25D366;
   --whatsapp-hover: #1ebe5d;
   --text-color: #333;
-  --background-light: #f4f8fb;
+  --background-light: transparent; /* MODIFIED: Now transparent to show body background image */
 
   /* Spacing */
   --spacing-unit: 1rem;
@@ -25,7 +25,14 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--text-color);
   line-height: 1.6;
-  background-color: var(--background-light);
+  background-color: var(--background-light); /* This is now transparent */
+  
+  /* --- NEW FULL PAGE BACKGROUND STYLES --- */
+  background-image: url('images/full-page-bg.jpg'); 
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps the background static while scrolling */
+  background-size: cover; /* Ensures the image covers the entire viewport */
+  /* ------------------------------------- */
 }
 
 /* --- Utility Classes & Base Styling --- */
@@ -224,17 +231,17 @@ h2 {
   max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9); /* MODIFIED: Added semi-transparent white background */
   border-left: 8px solid var(--primary-color);
   border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* MODIFIED: Slightly darker shadow */
   text-align: center;
   font-size: 1.15rem;
 }
 
 /* --- Booking Section --- */
 .booking-section {
-  background: linear-gradient(135deg, var(--background-light), #e6ffe6);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), #e6ffe6); /* Changed from var(--background-light) to a white gradient for contrast */
   padding: 40px 20px;
   text-align: center;
   border-radius: 12px;
@@ -321,7 +328,7 @@ h2 {
 
 /* --- ENHANCEMENT: Social Proof Section Styling --- */
 .social-proof-section {
-    background-color: var(--background-light);
+    background-color: rgba(255, 255, 255, 0.9); /* Changed to semi-transparent white for readability */
     padding: 4rem 20px;
     margin-top: 2rem;
 }
