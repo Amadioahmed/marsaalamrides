@@ -290,9 +290,10 @@ h2 {
   justify-content: center;
   text-align: center;
   color: white;
-  background: url('images/header-bg.jpg') no-repeat center center;
+  background-image: url('images/full-page-bg.jpg'); 
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
   background-size: cover;
-  position: relative;
 }
 
 .hero::before {
