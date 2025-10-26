@@ -590,6 +590,13 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    
+  / --- FIX: Background image not showing/scrolling on mobile --- /
+  body {
+      background-attachment: scroll !important; /* Forces scroll behavior on mobile */
+      background-position: center top; 
+  }
+  
   / Hides the desktop navbar links /
   .navbar .nav-links {
     display: none; 
