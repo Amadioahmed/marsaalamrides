@@ -27,13 +27,12 @@
   <link rel="alternate" hreflang="cs" href="https://marsaalam.site/index-cz.html" />
   <link rel="alternate" hreflang="ru" href="https://marsaalam.site/index-ru.html" />
   <link rel="alternate" hreflang="x-default" href="https://marsaalam.site/index.html" />
-  
-  <meta name="google-site-verification" content="wv-WZWES1FAc0Mb-4Vg_FlQmXLrKwvtqy-_2WC5XKoI" />
+  <link rel="alternate" hreflang="nl" href="https://marsaalam.site/index-nl.html" /> <meta name="google-site-verification" content="wv-WZWES1FAc0Mb-4Vg_FlQmXLrKwvtqy-_2WC5XKoI" />
   
   <meta property="og:title" content="Waleed Marsa Alam Taxi & Transfers - Flughafen-Shuttle, Touren" />
   <meta property="og:description" content="Buchen Sie zuverlässige Flughafentransfers, Taxis und unvergessliche Rotes Meer Touren (Tauchen, Safari) in Marsa Alam, Ägypten. Sofortbuchung über WhatsApp." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://marsaalam.site/" />
+  <meta property="og:url" content="https://marsaalam.site/index-de.html" />
   <meta property="og:image" content="images/social-share-image.jpg" /> 
   <meta property="og:site_name" content="Waleed Marsa Alam Taxi" />
   <meta property="og:locale" content="de_DE" />
@@ -184,23 +183,24 @@
   </script>
 </head>
 <body>
+  
   <div class="top-contact-bar">
     <a href="#services">Dienste</a>
     <a href="#activities">Aktivitäten</a>
+    
+    <select id="language-switcher" onchange="window.location.href=this.value;">
+        <option value="index.html">EN</option>
+        <option value="index-de.html" selected>DE</option>
+        <option value="index-ar.html">AR</option>
+        <option value="index-it.html">IT</option>
+        <option value="index-pl.html">PL</option>
+        <option value="index-cz.html">CS</option>
+        <option value="index-ru.html">RU</option>
+        <option value="index-nl.html">NL</option>
+    </select>
+    
     <a href="https://wa.me/201200720224?text=Fahrt%20uber%20WhatsApp%20buchen" target="_blank" class="mobile-whatsapp-btn"><i class="fab fa-whatsapp"></i> Chatten</a>
   </div>
-
-  <div id="google_translate_element" class="translation-widget"></div>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'de',
-        includedLanguages: 'en,ar,de,it',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <nav class="navbar">
     <div class="logo">Waleed Taxi</div>
@@ -210,6 +210,17 @@
       <li><a href="#activities">Touren</a></li>
       <li><a href="https://wa.me/201200720224" target="_blank">Kontakt</a></li>
     </ul>
+    
+    <select id="language-switcher" onchange="window.location.href=this.value;">
+        <option value="index.html">EN</option>
+        <option value="index-de.html" selected>DE</option>
+        <option value="index-ar.html">AR</option>
+        <option value="index-it.html">IT</option>
+        <option value="index-pl.html">PL</option>
+        <option value="index-cz.html">CS</option>
+        <option value="index-ru.html">RU</option>
+        <option value="index-nl.html">NL</option>
+    </select>
   </nav>
 
   <header class="hero">
@@ -332,6 +343,19 @@
   
   <script>
     // Optional: Add JavaScript for navbar scroll effect here if needed
+    // NOTE: The Google Translate scripts have been intentionally removed.
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+    });
   </script>
 </body>
 </html>
