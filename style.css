@@ -14,10 +14,10 @@ html[lang="ar"] .navbar {
     flex-direction: row-reverse;
 }
 
-/ Flips the top navigation bar links /
+/ FIX: Flips the mobile top bar order for RTL /
 html[lang="ar"] .top-contact-bar {
-    / If content is left-aligned, use flex-start. If right-aligned, use flex-end. /
-    justify-content: flex-start; 
+    flex-direction: row-reverse;
+    justify-content: space-between; 
 }
 
 / Flips the footer content /
@@ -98,12 +98,16 @@ body {
 .goog-te-balloon-frame,  / Hidden balloon for old versions /
 .skiptranslate.goog-te-gadget, / Hide the default inline gadget if present /
 .goog-tooltip, / Hide the tooltip that appears on hover /
-#google_translate_element { / Hide the container where the plugin is initialized /
+#google_translate_element, / Hide the container where the plugin is initialized /
+.goog-te-combo, / Hides the actual dropdown element on the top left /
+.goog-te-gadget-simple, / Hides the parent element of the dropdown /
+.goog-te-spinner-pos { 
     display: none !important;
     visibility: hidden !important;
     position: absolute !important;
     left: -9999px !important; / Off-screen positioning /
 }
+
 / Also removes the top padding/margin the plugin sometimes adds to the <body> /
 body {
     top: 0px !important;
@@ -250,9 +254,11 @@ h2 {
   border-bottom: 2px solid var(--primary-color);
 }
 
-/ --- Language Switcher Styling (Updated to use a class) --- /
+/ ------------------------------------------------------------------------------------------------- /
+/ --- Language Switcher Styling (CORRECTED: Targeting the ID as per HTML: #language-switcher) --- /
+/ ------------------------------------------------------------------------------------------------- /
 
-.language-switcher {
+#language-switcher {
     margin-left: 20px;
     padding: 8px 15px; 
     font-size: 1rem;
@@ -270,7 +276,7 @@ h2 {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.language-switcher:hover {
+#language-switcher:hover {
     background-color: var(--primary-color); 
     border-color: var(--primary-color);
     color: var(--secondary-color);
@@ -603,7 +609,7 @@ h2 {
   
   / Make the language switcher look right in the mobile bar (Updated selector) /
 
-  .language-switcher {
+  #language-switcher {
       font-size: 0.9rem;
       padding: 5px 10px;
       margin-left: 10px; 
@@ -680,7 +686,7 @@ h2 {
     }
     
     .top-contact-bar a,
-    .top-contact-bar .language-switcher, / Updated selector /
+    .top-contact-bar #language-switcher, / CORRECTED: Targeting the ID /
     .mobile-whatsapp-btn {
         font-size: 0.8rem;
     }
