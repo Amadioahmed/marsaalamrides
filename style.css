@@ -1,3 +1,50 @@
+/* --- RTL (Right-to-Left) Styles for Arabic pages --- */
+
+/* Ensures the body's text is aligned right for all content */
+html[lang="ar"],
+html[lang="ar"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Flips the main navigation and logo positions */
+html[lang="ar"] .navbar {
+    flex-direction: row-reverse;
+}
+
+/* Flips the top navigation bar links */
+html[lang="ar"] .top-contact-bar {
+    justify-content: flex-end; /* Align items to the right */
+}
+
+/* Flips the footer content */
+html[lang="ar"] .footer-content {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+/* Flips the floating WhatsApp button to the left */
+html[lang="ar"] .floating-whatsapp {
+    left: 20px; /* Move from right to left */
+    right: auto;
+}
+
+/* Flips the alignment of the review cards and social proof */
+html[lang="ar"] .review-card,
+html[lang="ar"] .intro {
+    text-align: right;
+}
+
+/* Flips the position of the Language Switcher in the navbar */
+html[lang="ar"] .navbar .nav-links {
+    margin-right: 0;
+    margin-left: auto; /* Push links to the left */
+}
+
+/* ================================================= */
+/* --- CORE STYLES (Provided by User) --- */
+/* ================================================= */
+
 :root {
   /* Color Palette */
   --primary-color: #FFCC00; /* Yellow/Gold for highlights */
@@ -432,6 +479,11 @@ h2 {
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
+    /* Added to align items on desktop, reversed on RTL pages */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrap on mobile */
 }
 
 .site-footer p {
@@ -496,12 +548,21 @@ h2 {
     100% { transform: scale(1); }
 }
 
-/* --- Media Queries for Responsiveness --- */
+/* ================================================= */
+/* --- Media Queries for Responsiveness (Fixes) --- */
+/* ================================================= */
+
+@media (max-width: 1024px) {
+    /* Slightly less padding on large screens */
+    .navbar, .navbar.scrolled {
+        padding: 10px 20px;
+    }
+}
+
 @media (max-width: 768px) {
-  /* Hides the traditional desktop navbar */
-  .navbar {
-    padding: 10px 20px;
-    /* FIX: We need the switcher to appear on mobile, so we'll add it to the top-contact-bar */
+  /* Hides the traditional desktop navbar links */
+  .navbar .nav-links {
+    display: none; 
   }
   
   /* Shows the mobile contact bar/header (CRITICAL FIX) */
@@ -518,5 +579,87 @@ h2 {
       background-color: white; /* White background for visibility on the dark bar */
       color: var(--secondary-color);
   }
+  
+  /* Hides the desktop language switcher from the main navbar when the links are hidden */
+  .navbar #language-switcher {
+      display: none; 
+  }
 
   /* Makes H2 titles look better on small screens (FIXED) */
+  h2 {
+      font-size: 1.6rem;
+      margin: 2rem 0 1rem;
+      padding: 0 10px 5px; /* Added horizontal padding to prevent breaking */
+  }
+
+  /* Adjustments for main content sections */
+  .intro,
+  .booking-section,
+  .card-grid,
+  .social-proof-section {
+      padding: 1rem 15px; /* Reduced padding for more content space */
+  }
+
+  /* Card layout adjustment (Grid handles this well, but further tweaks) */
+  .card-grid {
+    gap: 15px;
+  }
+  
+  .service-card, .activity-card, .review-card {
+      min-height: 250px;
+  }
+  
+  /* Footer adjustments for mobile stacking */
+  .footer-content {
+      flex-direction: column; /* Stack items vertically */
+      text-align: center;
+  }
+  
+  .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+  }
+  
+  .site-footer .primary-btn {
+      margin: 0 0 10px 0; /* Centered button */
+  }
+  
+  .footer-links a,
+  .footer-links span {
+      margin: 5px 0;
+  }
+}
+
+/* Extra small devices (like small Android phones) */
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .floating-whatsapp {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    .top-contact-bar a {
+        font-size: 0.8rem;
+    }
+
+    /* Force the Language Switcher to stack better if needed */
+    .top-contact-bar {
+        padding: 8px 10px;
+    }
+    
+    .mobile-whatsapp-btn {
+        font-size: 0.9rem;
+    }
+}
