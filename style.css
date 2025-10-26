@@ -174,13 +174,34 @@ h2 {
   border-bottom: 2px solid var(--primary-color);
 }
 
-/* --- Translation Widget Styling --- */
-.translation-widget {
-    text-align: right; 
-    padding: 10px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
+/* --- Language Switcher Styling (NEW) --- */
+#language-switcher {
+    /* Base positioning and spacing */
+    margin-left: 20px;
+    padding: 8px 15px; /* Increased padding for better click area */
+    font-size: 1rem;
+    font-weight: 500;
+    
+    /* Custom look */
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #f9f9f9; /* Off-white background */
+    color: var(--text-color); 
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 6px; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
+
+#language-switcher:hover {
+    background-color: var(--primary-color); /* Hover effect using primary color */
+    border-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* Note: The old .translation-widget has been removed */
 
 /* --- Hero Section --- */
 .hero {
@@ -480,82 +501,22 @@ h2 {
   /* Hides the traditional desktop navbar */
   .navbar {
     padding: 10px 20px;
-    display: none; 
+    /* FIX: We need the switcher to appear on mobile, so we'll add it to the top-contact-bar */
   }
   
   /* Shows the mobile contact bar/header (CRITICAL FIX) */
   .top-contact-bar {
       display: flex; 
   }
+  
+  /* Make the language switcher look right in the mobile bar */
+  #language-switcher {
+      font-size: 0.9rem;
+      padding: 5px 10px;
+      margin-left: 10px; /* Reduced margin for mobile spacing */
+      border-radius: 4px;
+      background-color: white; /* White background for visibility on the dark bar */
+      color: var(--secondary-color);
+  }
 
   /* Makes H2 titles look better on small screens (FIXED) */
-  h2 {
-    font-size: 1.5rem;
-    margin: 2rem auto 1rem;
-    padding-bottom: 3px;
-    max-width: 90%; 
-    width: fit-content;
-  }
-  
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero {
-    height: 50vh;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .intro {
-    margin: 2rem 15px;
-    padding: 1.5rem;
-  }
-
-  /* Stacks cards vertically */
-  .card-grid {
-    padding: 20px 15px;
-    grid-template-columns: 1fr; 
-  }
-  
-  /* Ensures the subtitle text aligns correctly on mobile (FIXED) */
-  .section-subtext {
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-      padding: 0 10px;
-  }
-
-  .floating-whatsapp {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    bottom: 15px;
-    right: 15px;
-  }
-
-  .site-footer .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-  }
-  
-  .site-footer .primary-btn {
-    margin: 0;
-  }
-}
-
-/* Very small screen adjustment (e.g., iPhone 5/SE) */
-@media (max-width: 400px) {
-    .primary-btn.large-btn {
-        font-size: 1rem;
-        padding: 0.8rem 1.5rem;
-    }
-}
