@@ -325,12 +325,26 @@ h2 {
     font-size: 0.95rem;
     margin-bottom: 1rem;
 }
-
-/* --- ENHANCEMENT: Social Proof Section Styling --- */
 .social-proof-section {
     background-color: rgba(255, 255, 255, 0.9); /* Changed to semi-transparent white for readability */
     padding: 4rem 20px;
     margin-top: 2rem;
+}
+.rating-display {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: -1rem auto 1.5rem; /* Adjusts spacing below the H2 */
+    font-weight: 600;
+}
+
+.rating-display .stars {
+    color: var(--primary-color); /* Makes the stars yellow */
+    font-size: 1.4rem;
+}
+
+.rating-display .count {
+    color: var(--secondary-color);
 }
 
 .social-proof-section h2 {
