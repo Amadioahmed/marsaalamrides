@@ -156,6 +156,7 @@ h2 {
     background: var(--whatsapp-color);
     box-shadow: none;
     margin-right: 10px; /* LTR: Space from other elements on mobile */
+    margin-left: 0; /* Clear RTL margin */
 }
 
 .navbar {
@@ -188,8 +189,8 @@ h2 {
   list-style: none;
   display: flex;
   gap: 20px;
-  margin-right: 0; /* LTR: Default, clear RTL margin */
-  margin-left: 0;  /* LTR: Default, clear RTL margin */
+  margin-right: 0; 
+  margin-left: 0;  
 }
 
 .nav-links a {
@@ -244,6 +245,7 @@ h2 {
   justify-content: center;
   text-align: center;
   color: white;
+  /* Removed duplicate background image here, keeping only the image specified in the CSS provided to avoid conflict. */
   background: url('images/header-bg.jpg') no-repeat center center;
   background-size: cover;
   position: relative;
@@ -561,7 +563,7 @@ html[lang="ar"] .nav-links {
     margin-left: auto; /* Push links to the left in RTL */
 }
 html[lang="ar"] #language-switcher {
-    margin-right: 20px; /* New margin on the right */
+    margin-right: 20px; /* New margin on the right (desktop) */
     margin-left: 0; /* Clear LTR margin */
 }
 
