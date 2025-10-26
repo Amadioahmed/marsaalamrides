@@ -1,4 +1,6 @@
+/* ================================================= */
 /* --- RTL (Right-to-Left) Styles for Arabic pages --- */
+/* ================================================= */
 
 /* Ensures the body's text is aligned right for all content */
 html[lang="ar"],
@@ -14,7 +16,8 @@ html[lang="ar"] .navbar {
 
 /* Flips the top navigation bar links */
 html[lang="ar"] .top-contact-bar {
-    justify-content: flex-end; /* Align items to the right */
+    /* If content is left-aligned, use flex-start. If right-aligned, use flex-end. */
+    justify-content: flex-start; 
 }
 
 /* Flips the footer content */
@@ -40,9 +43,15 @@ html[lang="ar"] .navbar .nav-links {
     margin-right: 0;
     margin-left: auto; /* Push links to the left */
 }
+/* Flips the intro section border to the right */
+html[lang="ar"] .intro {
+    border-left: none;
+    border-right: 8px solid var(--primary-color);
+}
+
 
 /* ================================================= */
-/* --- CORE STYLES (Provided by User) --- */
+/* --- CORE STYLES --- */
 /* ================================================= */
 
 :root {
@@ -52,7 +61,7 @@ html[lang="ar"] .navbar .nav-links {
   --whatsapp-color: #25D366;
   --whatsapp-hover: #1ebe5d;
   --text-color: #333;
-  --background-light: transparent; /* MODIFIED: Now transparent to show body background image */
+  --background-light: transparent;
 
   /* Spacing */
   --spacing-unit: 1rem;
@@ -72,7 +81,7 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--text-color);
   line-height: 1.6;
-  background-color: var(--background-light); /* This is now transparent */
+  background-color: var(--background-light); 
   
   /* --- NEW FULL PAGE BACKGROUND STYLES --- */
   background-image: url('images/full-page-bg.jpg'); 
@@ -141,7 +150,7 @@ h2 {
   font-family: 'Raleway', sans-serif;
   color: var(--secondary-color);
   border-bottom: 2px solid var(--primary-color);
-  display: block; /* Ensures it takes full width for centering */
+  display: block; 
   padding-bottom: 5px;
   width: auto;
   margin-left: auto;
@@ -153,8 +162,8 @@ h2 {
     background: var(--secondary-color);
     color: white;
     padding: 10px 15px;
-    display: none; /* Hidden on large screens, shown on mobile via media query */
-    justify-content: space-between;
+    display: none; 
+    justify-content: flex-end; /* Align items to the right on LTR mobile */
     align-items: center;
     position: sticky;
     top: 0;
@@ -173,6 +182,7 @@ h2 {
     border-radius: 4px;
     background: var(--whatsapp-color);
     box-shadow: none;
+    margin-right: 10px; /* Space from other elements on mobile */
 }
 
 .navbar {
@@ -221,21 +231,19 @@ h2 {
   border-bottom: 2px solid var(--primary-color);
 }
 
-/* --- Language Switcher Styling (NEW) --- */
+/* --- Language Switcher Styling --- */
 #language-switcher {
-    /* Base positioning and spacing */
     margin-left: 20px;
-    padding: 8px 15px; /* Increased padding for better click area */
+    padding: 8px 15px; 
     font-size: 1rem;
     font-weight: 500;
     
-    /* Custom look */
     -webkit-appearance: none; 
     -moz-appearance: none;
     appearance: none;
-    background-color: #f9f9f9; /* Off-white background */
+    background-color: #f9f9f9; 
     color: var(--text-color); 
-    border: 1px solid #ddd; /* Light border */
+    border: 1px solid #ddd; 
     border-radius: 6px; 
     cursor: pointer;
     transition: all 0.3s ease;
@@ -243,12 +251,10 @@ h2 {
 }
 
 #language-switcher:hover {
-    background-color: var(--primary-color); /* Hover effect using primary color */
+    background-color: var(--primary-color); 
     border-color: var(--primary-color);
     color: var(--secondary-color);
 }
-
-/* Note: The old .translation-widget has been removed */
 
 /* --- Hero Section --- */
 .hero {
@@ -294,8 +300,8 @@ h2 {
   max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.9); /* Enhanced Readability */
-  border-left: 8px solid var(--primary-color);
+  background: rgba(255, 255, 255, 0.9); 
+  border-left: 8px solid var(--primary-color); /* Default LTR border */
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
   text-align: center;
@@ -304,7 +310,7 @@ h2 {
 
 /* --- Booking Section --- */
 .booking-section {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), #e6ffe6); /* White gradient for contrast */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), #e6ffe6); 
   padding: 40px 20px;
   text-align: center;
   border-radius: 12px;
@@ -389,10 +395,10 @@ h2 {
     margin-bottom: 1rem;
 }
 
-/* --- Social Proof Section Styling (Includes Recent Rating Display) --- */
+/* --- Social Proof Section Styling --- */
 .social-proof-section {
     background-color: rgba(255, 255, 255, 0.9); 
-    padding: 2rem 20px 4rem; /* Adjusted top padding to 2rem to fix overlap */
+    padding: 2rem 20px 4rem; 
     margin-top: 2rem;
 }
 
@@ -400,7 +406,7 @@ h2 {
     text-align: center;
     font-size: 1.2rem;
     color: var(--text-color);
-    margin: 0.5rem auto 1rem; /* Removed negative margin, added small top margin */
+    margin: 0.5rem auto 1rem; 
     font-weight: 600;
 }
 
@@ -416,7 +422,7 @@ h2 {
 .section-subtext {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 2rem; /* Removed negative margin, added margin-bottom */
+    margin: 0 auto 2rem; 
     font-size: 1.1rem;
     color: #555;
 }
@@ -479,11 +485,10 @@ h2 {
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    /* Added to align items on desktop, reversed on RTL pages */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows wrap on mobile */
+    flex-wrap: wrap; 
 }
 
 .site-footer p {
@@ -549,47 +554,50 @@ h2 {
 }
 
 /* ================================================= */
-/* --- Media Queries for Responsiveness (Fixes) --- */
+/* --- Media Queries for Responsiveness --- */
 /* ================================================= */
 
 @media (max-width: 1024px) {
-    /* Slightly less padding on large screens */
     .navbar, .navbar.scrolled {
         padding: 10px 20px;
     }
 }
 
 @media (max-width: 768px) {
-  /* Hides the traditional desktop navbar links */
+  /* Hides the desktop navbar links */
   .navbar .nav-links {
+    display: none; 
+  }
+  
+  /* Hides the desktop navbar completely, as its content is now in the top-contact-bar */
+  .navbar {
     display: none; 
   }
   
   /* Shows the mobile contact bar/header (CRITICAL FIX) */
   .top-contact-bar {
       display: flex; 
+      /* Ensures space between the links/logo and the switcher/whatsapp button */
+      justify-content: space-between; 
   }
   
   /* Make the language switcher look right in the mobile bar */
   #language-switcher {
       font-size: 0.9rem;
       padding: 5px 10px;
-      margin-left: 10px; /* Reduced margin for mobile spacing */
+      margin-left: 10px; 
       border-radius: 4px;
-      background-color: white; /* White background for visibility on the dark bar */
+      background-color: white; 
       color: var(--secondary-color);
-  }
-  
-  /* Hides the desktop language switcher from the main navbar when the links are hidden */
-  .navbar #language-switcher {
-      display: none; 
+      /* Ensure it is visible, especially if it was hidden in the desktop navbar copy */
+      display: block !important; 
   }
 
-  /* Makes H2 titles look better on small screens (FIXED) */
+  /* Makes H2 titles look better on small screens */
   h2 {
       font-size: 1.6rem;
       margin: 2rem 0 1rem;
-      padding: 0 10px 5px; /* Added horizontal padding to prevent breaking */
+      padding: 0 10px 5px; 
   }
 
   /* Adjustments for main content sections */
@@ -597,10 +605,10 @@ h2 {
   .booking-section,
   .card-grid,
   .social-proof-section {
-      padding: 1rem 15px; /* Reduced padding for more content space */
+      padding: 1rem 15px; 
   }
 
-  /* Card layout adjustment (Grid handles this well, but further tweaks) */
+  /* Card layout adjustment */
   .card-grid {
     gap: 15px;
   }
@@ -611,7 +619,7 @@ h2 {
   
   /* Footer adjustments for mobile stacking */
   .footer-content {
-      flex-direction: column; /* Stack items vertically */
+      flex-direction: column; 
       text-align: center;
   }
   
@@ -623,7 +631,7 @@ h2 {
   }
   
   .site-footer .primary-btn {
-      margin: 0 0 10px 0; /* Centered button */
+      margin: 0 0 10px 0; 
   }
   
   .footer-links a,
@@ -650,11 +658,12 @@ h2 {
         font-size: 24px;
     }
     
-    .top-contact-bar a {
+    .top-contact-bar a,
+    .top-contact-bar #language-switcher,
+    .mobile-whatsapp-btn {
         font-size: 0.8rem;
     }
 
-    /* Force the Language Switcher to stack better if needed */
     .top-contact-bar {
         padding: 8px 10px;
     }
