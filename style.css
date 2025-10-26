@@ -106,19 +106,13 @@ h2 {
     background: var(--secondary-color);
     color: white;
     padding: 10px 15px;
-    display: none; /* Hidden on large screens, shown on mobile */
+    display: none; /* Hidden on large screens, shown on mobile via media query */
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
     font-size: 0.9rem;
-}
-/* Re-enable for mobile */
-@media (max-width: 768px) {
-    .top-contact-bar {
-        display: flex; 
-    }
 }
 
 .top-contact-bar a {
@@ -330,7 +324,7 @@ h2 {
 /* --- Social Proof Section Styling (Includes Recent Rating Display) --- */
 .social-proof-section {
     background-color: rgba(255, 255, 255, 0.9); 
-    padding: 4rem 20px;
+    padding: 2rem 20px 4rem; /* Adjusted top padding to 2rem to fix overlap */
     margin-top: 2rem;
 }
 
@@ -338,7 +332,7 @@ h2 {
     text-align: center;
     font-size: 1.2rem;
     color: var(--text-color);
-    margin: -1rem auto 1.5rem; 
+    margin: 0.5rem auto 1rem; /* Removed negative margin, added small top margin */
     font-weight: 600;
 }
 
@@ -354,7 +348,7 @@ h2 {
 .section-subtext {
     text-align: center;
     max-width: 800px;
-    margin: -1rem auto 2rem;
+    margin: 0 auto 2rem; /* Removed negative margin, added margin-bottom */
     font-size: 1.1rem;
     color: #555;
 }
@@ -483,11 +477,26 @@ h2 {
 
 /* --- Media Queries for Responsiveness --- */
 @media (max-width: 768px) {
+  /* Hides the traditional desktop navbar */
   .navbar {
     padding: 10px 20px;
-    display: none; /* Hide traditional navbar on small screens */
+    display: none; 
+  }
+  
+  /* Shows the mobile contact bar/header (CRITICAL FIX) */
+  .top-contact-bar {
+      display: flex; 
   }
 
+  /* Makes H2 titles look better on small screens (FIXED) */
+  h2 {
+    font-size: 1.5rem;
+    margin: 2rem auto 1rem;
+    padding-bottom: 3px;
+    max-width: 90%; 
+    width: fit-content;
+  }
+  
   .nav-links {
     flex-direction: column;
     gap: 10px;
@@ -510,14 +519,17 @@ h2 {
     padding: 1.5rem;
   }
 
-  h2 {
-    font-size: 1.5rem;
-    margin: 2rem 0 1rem;
-  }
-
+  /* Stacks cards vertically */
   .card-grid {
     padding: 20px 15px;
-    grid-template-columns: 1fr; /* Stack cards vertically */
+    grid-template-columns: 1fr; 
+  }
+  
+  /* Ensures the subtitle text aligns correctly on mobile (FIXED) */
+  .section-subtext {
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+      padding: 0 10px;
   }
 
   .floating-whatsapp {
@@ -538,4 +550,12 @@ h2 {
   .site-footer .primary-btn {
     margin: 0;
   }
+}
+
+/* Very small screen adjustment (e.g., iPhone 5/SE) */
+@media (max-width: 400px) {
+    .primary-btn.large-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
 }
