@@ -30,8 +30,8 @@ body {
   /* --- NEW FULL PAGE BACKGROUND STYLES --- */
   background-image: url('images/full-page-bg.jpg'); 
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Keeps the background static while scrolling */
-  background-size: cover; /* Ensures the image covers the entire viewport */
+  background-attachment: fixed; 
+  background-size: cover; 
   /* ------------------------------------- */
 }
 
@@ -43,7 +43,7 @@ body {
   padding: 0.8rem 1.5rem;
   text-decoration: none;
   font-weight: 600;
-  border-radius: 50px; /* Pill-shaped buttons */
+  border-radius: 50px; 
   transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   cursor: pointer;
@@ -94,12 +94,11 @@ h2 {
   font-family: 'Raleway', sans-serif;
   color: var(--secondary-color);
   border-bottom: 2px solid var(--primary-color);
-  display: inline-block;
+  display: block; /* Ensures it takes full width for centering */
   padding-bottom: 5px;
   width: auto;
   margin-left: auto;
   margin-right: auto;
-  display: block; /* to center the block element */
 }
 
 /* --- Navigation Bar --- */
@@ -107,14 +106,19 @@ h2 {
     background: var(--secondary-color);
     color: white;
     padding: 10px 15px;
-    display: flex;
+    display: none; /* Hidden on large screens, shown on mobile */
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
     font-size: 0.9rem;
-    display: none; /* Hidden on large screens, shown on mobile */
+}
+/* Re-enable for mobile */
+@media (max-width: 768px) {
+    .top-contact-bar {
+        display: flex; 
+    }
 }
 
 .top-contact-bar a {
@@ -140,17 +144,14 @@ h2 {
   position: sticky;
   top: 0;
   z-index: 50;
-  /* ENHANCEMENT: Add transition for smooth scroll effect */
   transition: all 0.3s ease;
 }
 
-/* ENHANCEMENT: Style when scrolled (Inspired by Source) */
 .navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  padding: 10px 40px; /* Make it slightly thinner on scroll */
+  padding: 10px 40px;
 }
-
 
 .logo {
   font-family: 'Raleway', sans-serif;
@@ -231,17 +232,17 @@ h2 {
   max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.9); /* MODIFIED: Added semi-transparent white background */
+  background: rgba(255, 255, 255, 0.9); /* Enhanced Readability */
   border-left: 8px solid var(--primary-color);
   border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* MODIFIED: Slightly darker shadow */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
   text-align: center;
   font-size: 1.15rem;
 }
 
 /* --- Booking Section --- */
 .booking-section {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), #e6ffe6); /* Changed from var(--background-light) to a white gradient for contrast */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), #e6ffe6); /* White gradient for contrast */
   padding: 40px 20px;
   text-align: center;
   border-radius: 12px;
@@ -325,31 +326,29 @@ h2 {
     font-size: 0.95rem;
     margin-bottom: 1rem;
 }
+
+/* --- Social Proof Section Styling (Includes Recent Rating Display) --- */
 .social-proof-section {
-    background-color: rgba(255, 255, 255, 0.9); /* Changed to semi-transparent white for readability */
+    background-color: rgba(255, 255, 255, 0.9); 
     padding: 4rem 20px;
     margin-top: 2rem;
 }
+
 .rating-display {
     text-align: center;
     font-size: 1.2rem;
     color: var(--text-color);
-    margin: -1rem auto 1.5rem; /* Adjusts spacing below the H2 */
+    margin: -1rem auto 1.5rem; 
     font-weight: 600;
 }
 
 .rating-display .stars {
-    color: var(--primary-color); /* Makes the stars yellow */
+    color: var(--primary-color);
     font-size: 1.4rem;
 }
 
 .rating-display .count {
     color: var(--secondary-color);
-}
-
-.social-proof-section h2 {
-    color: var(--secondary-color);
-    border-bottom: 2px solid var(--primary-color);
 }
 
 .section-subtext {
@@ -487,10 +486,6 @@ h2 {
   .navbar {
     padding: 10px 20px;
     display: none; /* Hide traditional navbar on small screens */
-  }
-
-  .top-contact-bar {
-      display: flex; /* Show the mobile contact bar */
   }
 
   .nav-links {
