@@ -1,69 +1,69 @@
-/* ================================================= */
-/* --- RTL (Right-to-Left) Styles for Arabic pages --- */
-/* ================================================= */
+/ ================================================= /
+/ --- RTL (Right-to-Left) Styles for Arabic pages --- /
+/ ================================================= /
 
-/* Ensures the body's text is aligned right for all content */
+/ Ensures the body's text is aligned right for all content /
 html[lang="ar"],
 html[lang="ar"] body {
     direction: rtl;
     text-align: right;
 }
 
-/* Flips the main navigation and logo positions */
+/ Flips the main navigation and logo positions /
 html[lang="ar"] .navbar {
     flex-direction: row-reverse;
 }
 
-/* Flips the top navigation bar links */
+/ Flips the top navigation bar links /
 html[lang="ar"] .top-contact-bar {
-    /* If content is left-aligned, use flex-start. If right-aligned, use flex-end. */
+    / If content is left-aligned, use flex-start. If right-aligned, use flex-end. /
     justify-content: flex-start; 
 }
 
-/* Flips the footer content */
+/ Flips the footer content /
 html[lang="ar"] .footer-content {
     flex-direction: row-reverse;
     text-align: right;
 }
 
-/* Flips the floating WhatsApp button to the left */
+/ Flips the floating WhatsApp button to the left /
 html[lang="ar"] .floating-whatsapp {
-    left: 20px; /* Move from right to left */
+    left: 20px; / Move from right to left /
     right: auto;
 }
 
-/* Flips the alignment of the review cards and social proof */
+/ Flips the alignment of the review cards and social proof /
 html[lang="ar"] .review-card,
 html[lang="ar"] .intro {
     text-align: right;
 }
 
-/* Flips the position of the Language Switcher in the navbar */
+/ Flips the position of the Language Switcher in the navbar /
 html[lang="ar"] .navbar .nav-links {
     margin-right: 0;
-    margin-left: auto; /* Push links to the left */
+    margin-left: auto; / Push links to the left /
 }
-/* Flips the intro section border to the right */
+/ Flips the intro section border to the right /
 html[lang="ar"] .intro {
     border-left: none;
     border-right: 8px solid var(--primary-color);
 }
 
 
-/* ================================================= */
-/* --- CORE STYLES --- */
-/* ================================================= */
+/ ================================================= /
+/ --- CORE STYLES --- /
+/ ================================================= /
 
 :root {
-  /* Color Palette */
-  --primary-color: #FFCC00; /* Yellow/Gold for highlights */
-  --secondary-color: #004d40; /* Dark Teal for contrast */
+  / Color Palette /
+  --primary-color: #FFCC00; / Yellow/Gold for highlights /
+  --secondary-color: #004d40; / Dark Teal for contrast /
   --whatsapp-color: #25D366;
   --whatsapp-hover: #1ebe5d;
   --text-color: #333;
   --background-light: transparent;
 
-  /* Spacing */
+  / Spacing /
   --spacing-unit: 1rem;
 }
 
@@ -83,17 +83,36 @@ body {
   line-height: 1.6;
   background-color: var(--background-light); 
   
-  /* --- NEW FULL PAGE BACKGROUND STYLES --- */
+  / --- NEW FULL PAGE BACKGROUND STYLES --- /
   background-image: url('images/full-page-bg.jpg'); 
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: cover; 
-  /* ------------------------------------- */
+  / ------------------------------------- /
 }
 
-/* --- Utility Classes & Base Styling --- */
+/ -------------------------------------------------------------------------------------- /
+/ --- FIX: Hide the intrusive Google Translate plug-in element (you use a custom one) --- /
+/ -------------------------------------------------------------------------------------- /
+.goog-te-banner-container, / The main container for the banner /
+.goog-te-balloon-frame,  / Hidden balloon for old versions /
+.skiptranslate.goog-te-gadget, / Hide the default inline gadget if present /
+.goog-tooltip, / Hide the tooltip that appears on hover /
+#google_translate_element { / Hide the container where the plugin is initialized /
+    display: none !important;
+    visibility: hidden !important;
+    position: absolute !important;
+    left: -9999px !important; / Off-screen positioning /
+}
+/ Also removes the top padding/margin the plugin sometimes adds to the <body> /
+body {
+    top: 0px !important;
+}
 
-/* Standardized Button Styling */
+
+/ --- Utility Classes & Base Styling --- /
+
+/ Standardized Button Styling /
 .btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
@@ -157,13 +176,13 @@ h2 {
   margin-right: auto;
 }
 
-/* --- Navigation Bar --- */
+/ --- Navigation Bar --- /
 .top-contact-bar {
     background: var(--secondary-color);
     color: white;
     padding: 10px 15px;
     display: none; 
-    justify-content: flex-end; /* Align items to the right on LTR mobile */
+    justify-content: flex-end; / Align items to the right on LTR mobile /
     align-items: center;
     position: sticky;
     top: 0;
@@ -182,7 +201,7 @@ h2 {
     border-radius: 4px;
     background: var(--whatsapp-color);
     box-shadow: none;
-    margin-right: 10px; /* Space from other elements on mobile */
+    margin-right: 10px; / Space from other elements on mobile /
 }
 
 .navbar {
@@ -231,8 +250,9 @@ h2 {
   border-bottom: 2px solid var(--primary-color);
 }
 
-/* --- Language Switcher Styling --- */
-#language-switcher {
+/ --- Language Switcher Styling (Updated to use a class) --- /
+
+.language-switcher {
     margin-left: 20px;
     padding: 8px 15px; 
     font-size: 1rem;
@@ -250,13 +270,13 @@ h2 {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-#language-switcher:hover {
+.language-switcher:hover {
     background-color: var(--primary-color); 
     border-color: var(--primary-color);
     color: var(--secondary-color);
 }
 
-/* --- Hero Section --- */
+/ --- Hero Section --- /
 .hero {
   height: 60vh;
   display: flex;
@@ -295,20 +315,20 @@ h2 {
   font-weight: 300;
 }
 
-/* --- Intro Section --- */
+/ --- Intro Section --- /
 .intro {
   max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.9); 
-  border-left: 8px solid var(--primary-color); /* Default LTR border */
+  border-left: 8px solid var(--primary-color); / Default LTR border /
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
   text-align: center;
   font-size: 1.15rem;
 }
 
-/* --- Booking Section --- */
+/ --- Booking Section --- /
 .booking-section {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), #e6ffe6); 
   padding: 40px 20px;
@@ -332,7 +352,7 @@ h2 {
   margin-bottom: 25px;
 }
 
-/* --- Service & Activity Cards (Card Grid) --- */
+/ --- Service & Activity Cards (Card Grid) --- /
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -395,7 +415,7 @@ h2 {
     margin-bottom: 1rem;
 }
 
-/* --- Social Proof Section Styling --- */
+/ --- Social Proof Section Styling --- /
 .social-proof-section {
     background-color: rgba(255, 255, 255, 0.9); 
     padding: 2rem 20px 4rem; 
@@ -473,7 +493,7 @@ h2 {
 }
 
 
-/* --- Footer --- */
+/ --- Footer --- /
 .site-footer {
   background-color: var(--secondary-color);
   color: white;
@@ -513,7 +533,7 @@ h2 {
     margin-right: 5px;
 }
 
-/* Adjusting footer buttons */
+/ Adjusting footer buttons /
 .site-footer .primary-btn {
     background: var(--primary-color);
     color: var(--secondary-color);
@@ -523,7 +543,7 @@ h2 {
     box-shadow: none;
 }
 
-/* --- Floating WhatsApp Icon --- */
+/ --- Floating WhatsApp Icon --- /
 .floating-whatsapp {
   position: fixed;
   bottom: 20px;
@@ -553,9 +573,9 @@ h2 {
     100% { transform: scale(1); }
 }
 
-/* ================================================= */
-/* --- Media Queries for Responsiveness --- */
-/* ================================================= */
+/ ================================================= /
+/ --- Media Queries for Responsiveness --- /
+/ ================================================= /
 
 @media (max-width: 1024px) {
     .navbar, .navbar.scrolled {
@@ -564,43 +584,44 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  /* Hides the desktop navbar links */
+  / Hides the desktop navbar links /
   .navbar .nav-links {
     display: none; 
   }
   
-  /* Hides the desktop navbar completely, as its content is now in the top-contact-bar */
+  / Hides the desktop navbar completely, as its content is now in the top-contact-bar /
   .navbar {
     display: none; 
   }
   
-  /* Shows the mobile contact bar/header (CRITICAL FIX) */
+  / Shows the mobile contact bar/header (CRITICAL FIX) /
   .top-contact-bar {
       display: flex; 
-      /* Ensures space between the links/logo and the switcher/whatsapp button */
+      / Ensures space between the links/logo and the switcher/whatsapp button /
       justify-content: space-between; 
   }
   
-  /* Make the language switcher look right in the mobile bar */
-  #language-switcher {
+  / Make the language switcher look right in the mobile bar (Updated selector) /
+
+  .language-switcher {
       font-size: 0.9rem;
       padding: 5px 10px;
       margin-left: 10px; 
       border-radius: 4px;
       background-color: white; 
       color: var(--secondary-color);
-      /* Ensure it is visible, especially if it was hidden in the desktop navbar copy */
+      / Ensure it is visible, especially if it was hidden in the desktop navbar copy /
       display: block !important; 
   }
 
-  /* Makes H2 titles look better on small screens */
+  / Makes H2 titles look better on small screens /
   h2 {
       font-size: 1.6rem;
       margin: 2rem 0 1rem;
       padding: 0 10px 5px; 
   }
 
-  /* Adjustments for main content sections */
+  / Adjustments for main content sections /
   .intro,
   .booking-section,
   .card-grid,
@@ -608,7 +629,7 @@ h2 {
       padding: 1rem 15px; 
   }
 
-  /* Card layout adjustment */
+  / Card layout adjustment /
   .card-grid {
     gap: 15px;
   }
@@ -617,7 +638,7 @@ h2 {
       min-height: 250px;
   }
   
-  /* Footer adjustments for mobile stacking */
+  / Footer adjustments for mobile stacking /
   .footer-content {
       flex-direction: column; 
       text-align: center;
@@ -640,7 +661,7 @@ h2 {
   }
 }
 
-/* Extra small devices (like small Android phones) */
+/ Extra small devices (like small Android phones) /
 @media (max-width: 480px) {
     .hero {
         height: 50vh;
@@ -659,7 +680,7 @@ h2 {
     }
     
     .top-contact-bar a,
-    .top-contact-bar #language-switcher,
+    .top-contact-bar .language-switcher, / Updated selector /
     .mobile-whatsapp-btn {
         font-size: 0.8rem;
     }
