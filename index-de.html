@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
 <head>
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQS9YTGRQL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,44 +11,82 @@
   </script>
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Marsa Alam Taxi & Transfers – Flughafen-Shuttle, Limousine & Touren | Jetzt buchen</title>
   
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Buchen Sie Marsa Alam Flughafentransfers, Stadttaxis und Rotes Meer Touren. Sofortbuchung über WhatsApp. Deutsch & Arabisch. Von Reisenden vertraut." />
   <meta name="keywords" content="Marsa Alam taxi, Marsa Alam Flughafentransfer, Marsa Alam Flughafen-Shuttle, Marsa Alam privater Transfer, Marsa Alam Limousine, Marsa Alam Touren, Rotes Meer Tauchausflüge, Schnorcheln Marsa Alam, Marsa Alam Wüstensafari, Quadfahren Marsa Alam, Waleed Marsa Alam Taxi, Transfer nach Port Ghalib, Transfer nach El Quseir, Marsa Alam RMF" />
   <meta name="author" content="Waleed Marsa Alam Taxi" />
 
+  <!-- Canonical & Language Alternates (HREFLANG) -->
   <link rel="canonical" href="https://marsaalam.site/index-de.html" />
-
   <link rel="alternate" hreflang="en" href="https://marsaalam.site/index.html" />
   <link rel="alternate" hreflang="de" href="https://marsaalam.site/index-de.html" />
   <link rel="alternate" hreflang="it" href="https://marsaalam.site/index-it.html" />
   <link rel="alternate" hreflang="pl" href="https://marsaalam.site/index-pl.html" />
-  <link rel="alternate" hreflang="cs" href="https://marsaalam.site/index-cz.html" />
+  <link rel="alternate" hreflang="cs" href="https://marsaalam.site/index-cs.html" />
   <link rel="alternate" hreflang="ru" href="https://marsaalam.site/index-ru.html" />
   <link rel="alternate" hreflang="x-default" href="https://marsaalam.site/index.html" />
-  <link rel="alternate" hreflang="nl" href="https://marsaalam.site/index-nl.html" /> <meta name="google-site-verification" content="wv-WZWES1FAc0Mb-4Vg_FlQmXLrKwvtqy-_2WC5XKoI" />
   
+  <meta name="google-site-verification" content="wv-WZWES1FAc0Mb-4Vg_FlQmXLrKwvtqy-_2WC5XKoI" />
+  
+  <!-- Open Graph (for Facebook, WhatsApp, etc.) -->
   <meta property="og:title" content="Waleed Marsa Alam Taxi & Transfers - Flughafen-Shuttle, Touren" />
-  <meta property="og:description" content="Buchen Sie zuverlässige Flughafentransfers, Taxis und unvergessliche Rotes Meer Touren (Tauchen, Safari) in Marsa Alam, Ägypten. Sofortbuchung über WhatsApp." />
+  <meta property="og:description" content="Buchen Sie zuverlässige Flughafentransfers, Taxis und unvergessliche Touren am Roten Meer (Tauchen, Safari) in Marsa Alam, Ägypten. Sofortbuchung über WhatsApp." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://marsaalam.site/index-de.html" />
   <meta property="og:image" content="images/social-share-image.jpg" /> 
   <meta property="og:site_name" content="Waleed Marsa Alam Taxi" />
   <meta property="og:locale" content="de_DE" />
 
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@WaleedMarsaAlamTaxi" />
   <meta name="twitter:title" content="Marsa Alam Taxi & Touren" />
-  <meta name="twitter:description" content="Zuverlässige Flughafentransfers, Stadtfahrten und die besten Rotes Meer Touren. Sofortbuchung über WhatsApp." />
+  <meta name="twitter:description" content="Zuverlässige Flughafentransfers, Stadtfahrten und die besten Touren. Sofortbuchung über WhatsApp." />
   <meta name="twitter:image" content="images/social-share-image.jpg" /> 
 
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png"> 
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Raleway:wght@300;700&display=swap" rel="stylesheet" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Raleway:wght@300;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': '#FFCC00',   // Yellow/Gold
+            'secondary': '#004d40', // Dark Teal
+            'whatsapp': '#25D366',
+            'whatsapp-hover': '#1ebe5d',
+          },
+          fontFamily: {
+            'poppins': ['Poppins', 'sans-serif'],
+            'raleway': ['Raleway', 'sans-serif'],
+          },
+          backgroundImage: {
+            'page-bg': "url('images/full-page-bg.jpg')",
+            'hero-bg': "url('images/header-bg.jpg')",
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Schema.org JSON-LD (Keep English version for widest compatibility) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -71,290 +110,354 @@
       "@type": "Place",
       "name": "Marsa Alam, Red Sea Governorate, Egypt"
     },
-    "availableLanguage": ["en", "ar", "de"],
+    "availableLanguage": ["en", "ar", "cs", "de", "it", "pl", "ru"],
     "sameAs": [
       "https://www.facebook.com/marsa.alam.taxi.2024",
       "https://wa.me/201200720224"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Customer Support",
-      "availableLanguage": ["en", "ar", "de"],
-      "telephone": "+20 120 072 0224"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "1304"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Emily R."
-        },
-        "datePublished": "2025-08-12",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "reviewBody": "Excellent airport transfer and diving tour. Punctual, friendly, and very professional!"
-      },
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Mohamed A."
-        },
-        "datePublished": "2025-09-03",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "reviewBody": "The desert safari was unforgettable. Great communication and top-notch service!"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Transport & Tour Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Airport Transfers",
-            "description": "Reliable pick-up and drop-off service to and from Marsa Alam International Airport."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "City Taxi Service",
-            "description": "Comfortable and affordable rides within Marsa Alam city, available 24/7."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Luxury Limousine",
-            "description": "Premium limousine service for special occasions and stylish travel."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "TouristTrip",
-            "name": "Scuba Diving Tours",
-            "description": "Explore coral reefs and marine life with guided Red Sea diving experiences."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "TouristTrip",
-            "name": "Snorkeling Trips",
-            "description": "Discover colorful fish and crystal-clear waters with expert-led snorkeling tours."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "TouristTrip",
-            "name": "Desert Safari Adventures",
-            "description": "Quad biking, camel rides, and Bedouin dinners in the Marsa Alam desert."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "TouristTrip",
-            "name": "Red Sea Boat Excursions",
-            "description": "Relaxing cruises with dolphin watching and island visits."
-          }
-        }
-      ]
-    }
+    ]
   }
   </script>
 </head>
-<body>
-  
-  <div class="top-contact-bar">
-    <a href="#services">Dienste</a>
-    <a href="#activities">Aktivitäten</a>
-    
-    <select id="language-switcher" onchange="window.location.href=this.value;">
-        <option value="index.html">EN</option>
-        <option value="index-de.html" selected>DE</option>
-        <option value="index-ar.html">AR</option>
-        <option value="index-it.html">IT</option>
-        <option value="index-pl.html">PL</option>
-        <option value="index-cz.html">CS</option>
-        <option value="index-ru.html">RU</option>
-        <option value="index-nl.html">NL</option>
-    </select>
-    
-    <a href="https://wa.me/201200720224?text=Fahrt%20uber%20WhatsApp%20buchen" target="_blank" class="mobile-whatsapp-btn"><i class="fab fa-whatsapp"></i> Chatten</a>
-  </div>
+<body class="font-poppins text-gray-800 bg-page-bg bg-cover bg-center bg-no-repeat bg-scroll">
 
-  <nav class="navbar">
-    <div class="logo">Waleed Taxi</div>
-    <ul class="nav-links">
-      <li><a href="#" class="active">Startseite</a></li>
-      <li><a href="#services">Transfers</a></li>
-      <li><a href="#activities">Touren</a></li>
-      <li><a href="https://wa.me/201200720224" target="_blank">Kontakt</a></li>
-    </ul>
+  <!-- Navigation Bar -->
+  <nav id="navbar" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index-de.html" class="font-raleway text-2xl font-bold text-secondary">
+            Waleed Taxi
+          </a>
+        </div>
+        
+        <!-- Desktop Nav Links -->
+        <div class="hidden md:flex md:items-center md:space-x-6">
+          <a href="index-de.html" class="text-secondary font-medium hover:text-primary transition-colors">Startseite</a>
+          <a href="#services" class="text-gray-700 font-medium hover:text-primary transition-colors">Transfers</a>
+          <a href="#activities" class="text-gray-700 font-medium hover:text-primary transition-colors">Touren</a>
+          <a href="https://wa.me/201200720224" target="_blank" class="text-gray-700 font-medium hover:text-primary transition-colors">Kontakt</a>
+          
+          <!-- Language Switcher (Fixed URL logic) -->
+          <select id="language-switcher-desktop" onchange="window.location.href = './' + this.value;" class="bg-gray-100 border border-gray-300 rounded-md py-2 px-3 text-sm font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+            <option value="index.html">English</option>
+            <option value="index-ar.html">العربية</option>
+            <option value="index-cs.html">Čeština</option>
+            <option value="index-de.html">Deutsch</option>
+            <option value="index-it.html">Italiano</option>
+            <option value="index-pl.html">Polski</option>
+            <option value="index-ru.html">Русский</option>
+          </select>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-secondary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+            <span class="sr-only">Hauptmenü öffnen</span>
+            <!-- Hamburger Icon -->
+            <svg id="icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+            <!-- Close Icon -->
+            <svg id="icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        
+      </div>
+    </div>
     
-    <select id="language-switcher" onchange="window.location.href=this.value;">
-        <option value="index.html">EN</option>
-        <option value="index-de.html" selected>DE</option>
-        <option value="index-ar.html">AR</option>
-        <option value="index-it.html">IT</option>
-        <option value="index-pl.html">PL</option>
-        <option value="index-cz.html">CS</option>
-        <option value="index-ru.html">RU</option>
-        <option value="index-nl.html">NL</option>
-    </select>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index-de.html" class="block px-3 py-2 rounded-md text-base font-medium text-secondary bg-gray-50">Startseite</a>
+        <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-secondary hover:bg-gray-50">Transfers</a>
+        <a href="#activities" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-secondary hover:bg-gray-50">Touren</a>
+        <a href="https://wa.me/201200720224" target="_blank" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-secondary hover:bg-gray-50">Kontakt</a>
+        
+        <!-- Mobile Language Switcher (Fixed URL logic) -->
+        <div class="px-3 pt-2">
+          <select id="language-switcher-mobile" onchange="window.location.href = './' + this.value;" class="w-full bg-gray-100 border border-gray-300 rounded-md py-2 px-3 text-sm font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+            <option value="index.html">English</option>
+            <option value="index-ar.html">العربية</option>
+            <option value="index-cs.html">Čeština</option>
+            <option value="index-de.html">Deutsch</option>
+            <option value="index-it.html">Italiano</option>
+            <option value="index-pl.html">Polski</option>
+            <option value="index-ru.html">Русский</option>
+          </select>
+        </div>
+      </div>
+    </div>
   </nav>
 
-  <header class="hero">
-    <div class="overlay">
-      <hgroup>
-        <h1>Waleed Marsa Alam Taxi</h1>
-        <p>Ihr vertrauenswürdiger Taxi-, Limousinen- & Aktivitätspartner am Roten Meer.</p>
-      </hgroup>
-      <a href="https://wa.me/201200720224?text=Fahrt%20uber%20WhatsApp%20buchen" target="_blank" class="btn primary-btn large-btn">Fahrt über WhatsApp buchen</a>
+  <!-- Hero Section -->
+  <header class="h-[60vh] bg-hero-bg bg-cover bg-center flex items-center justify-center text-center text-white relative">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/60 z-0"></div>
+    
+    <div class="relative z-10 p-6 max-w-3xl">
+      <div>
+        <h1 class="font-raleway font-bold text-4xl sm:text-5xl lg:text-6xl drop-shadow-md">
+          Waleed Marsa Alam Taxi
+        </h1>
+        <p class="mt-4 text-lg sm:text-xl lg:text-2xl font-light drop-shadow-sm">
+          Ihr vertrauenswürdiger Partner für Taxi, Limousine und Aktivitäten am Roten Meer.
+        </p>
+      </div>
+      <a href="https://wa.me/201200720224?text=Fahrt%20uber%20WhatsApp%20buchen" target="_blank" class="mt-8 inline-block bg-primary text-secondary font-bold text-lg px-8 py-3 rounded-full shadow-lg hover:bg-yellow-400 transition-transform transform hover:scale-105">
+        Buchen Sie Ihre Fahrt über WhatsApp
+      </a>
     </div>
   </header>
 
-  <main>
-    <section class="intro">
-      <p>
-        Waleed Marsa Alam Taxi bietet zuverlässige, komfortable Flughafentransfers und Stadttaxi-Dienste in der gesamten Region am Roten Meer. Wir bieten Premium-Transport, einschließlich privater Luxuslimousinen, vom und zum Marsa Alam International Airport (RMF). Über den Transport hinaus buchen Sie unvergessliche Marsa Alam Touren und Aktivitäten, wie geführte Tauchausflüge und spannende Wüstensafaris, die eine angenehme Reise mit Leichtigkeit und Stil in Ägypten gewährleisten.
+  <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Intro Section -->
+    <section class="max-w-4xl mx-auto my-12 sm:my-16 p-6 sm:p-8 bg-white/90 rounded-lg shadow-xl border-l-8 border-primary">
+      <p class="text-lg sm:text-xl text-gray-700 text-center leading-relaxed">
+        **Waleed Marsa Alam Taxi** bietet zuverlässige, komfortable Flughafentransfers und Stadt-Taxi-Dienste in der gesamten Region des Roten Meeres. Wir bieten Premium-Transporte, einschließlich privater **Luxuslimousinen**, zum und vom Marsa Alam International Airport (**RMF**). Neben dem Transport können Sie unvergessliche **Touren und Aktivitäten** in Marsa Alam buchen, wie geführte Tauchausflüge und aufregende Wüstensafaris, die eine angenehme Reise mit Leichtigkeit und Stil in Ägypten gewährleisten.
       </p>
     </section>
 
-    <section class="booking-section">
-      <h2>📱 Sofortbuchung</h2>
-      <p>Klicken Sie unten, um direkt mit uns über WhatsApp zu chatten und Ihre Fahrt oder Tour zu reservieren.</p>
-      <a href="https://wa.me/201200720224?text=Fahrt%20uber%20WhatsApp%20buchen" target="_blank" class="btn whatsapp-btn">Im WhatsApp chatten</a>
+    <!-- Instant Booking Section -->
+    <section class="max-w-2xl mx-auto my-12 sm:my-16 p-6 sm:p-8 bg-gradient-to-br from-white/90 to-green-50/90 rounded-lg shadow-xl text-center">
+      <h2 class="text-3xl font-bold font-raleway text-secondary mb-3">
+        <i class="fab fa-whatsapp"></i> Sofortbuchung
+      </h2>
+      <p class="text-lg text-gray-600 mb-6">
+        Klicken Sie unten, um direkt mit uns auf WhatsApp zu chatten und Ihre Fahrt oder Tour zu reservieren.
+      </p>
+      <a href="https://wa.me/201200720224?text=Fahrt%20uber%20WhatsApp%20buchen" target="_blank" class="inline-block bg-whatsapp text-white font-bold text-lg px-10 py-3 rounded-full shadow-lg hover:bg-whatsapp-hover transition-transform transform hover:scale-105">
+        Jetzt auf WhatsApp chatten
+      </a>
     </section>
 
-    <section id="services" class="card-grid">
-      <h2>🚖 Marsa Alam Transportdienste</h2>
-      <div class="service-card" style="background-image: url('images/airport.jpg')" role="img" aria-label="Marsa Alam Flughafentransfer Taxi">
-        <h3>Flughafentransfers (Marsa Alam International)</h3>
-        <p>Zuverlässiger Abhol- und Bringservice vom und zum Marsa Alam International Airport.</p>
-        <a href="https://wa.me/201200720224" target="_blank" class="btn card-btn">Jetzt buchen</a>
-      </div>
+    <!-- Services Section -->
+    <section id="services" class="my-12 sm:my-16">
+      <h2 class="text-3xl sm:text-4xl font-bold font-raleway text-secondary text-center mb-10 pb-2 border-b-4 border-primary">
+        🚖 Marsa Alam Transport
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        
+        <!-- Service Card 1 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-transform transform hover:-translate-y-1 hover:shadow-2xl">
+          <img class="w-full h-56 object-cover" src="images/airport.jpg" alt="Marsa Alam Flughafentransfer Taxi am Terminal geparkt">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold font-raleway text-secondary mb-2">Flughafentransfers (RMF)</h3>
+            <p class="text-gray-600 mb-4 flex-grow">Zuverlässiger Abhol- und Bringservice vom und zum Marsa Alam International Airport.</p>
+            <a href="https://wa.me/201200720224" target="_blank" class="self-start mt-auto bg-primary text-secondary font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition-colors">
+              Jetzt buchen
+            </a>
+          </div>
+        </div>
 
-      <div class="service-card" style="background-image: url('images/city.jpg')" role="img" aria-label="Marsa Alam Stadttaxi Service">
-        <h3>Stadtfahrten & Lokaler Taxiservice</h3>
-        <p>Bequeme und erschwingliche Fahrten innerhalb der Stadt Marsa Alam, rund um die Uhr verfügbar.</p>
-        <a href="https://wa.me/201200720224" target="_blank" class="btn card-btn">Jetzt buchen</a>
-      </div>
+        <!-- Service Card 2 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-transform transform hover:-translate-y-1 hover:shadow-2xl">
+          <img class="w-full h-56 object-cover" src="images/city.jpg" alt="Stadttaxi fährt durch Marsa Alam">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold font-raleway text-secondary mb-2">Stadt- & Lokaler Taxidienst</h3>
+            <p class="text-gray-600 mb-4 flex-grow">Bequeme und erschwingliche Fahrten innerhalb der Stadt Marsa Alam, rund um die Uhr verfügbar.</p>
+            <a href="https://wa.me/201200720224" target="_blank" class="self-start mt-auto bg-primary text-secondary font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition-colors">
+              Jetzt buchen
+            </a>
+          </div>
+        </div>
 
-      <div class="service-card" style="background-image: url('images/limousine.jpg')" role="img" aria-label="Luxuslimousinen-Service in Marsa Alam">
-        <h3>Luxuslimousinen-Service</h3>
-        <p>Reisen Sie stilvoll mit unserem Premium-Limousinenservice für besondere Anlässe.</p>
-        <a href="https://wa.me/201200720224" target="_blank" class="btn card-btn">Jetzt buchen</a>
+        <!-- Service Card 3 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-transform transform hover:-translate-y-1 hover:shadow-2xl">
+          <img class="w-full h-56 object-cover" src="images/limousine.jpg" alt="Luxuriöser schwarzer Limousinenservice">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold font-raleway text-secondary mb-2">Luxuriöser Limousinenservice</h3>
+            <p class="text-gray-600 mb-4 flex-grow">Reisen Sie stilvoll mit unserem Premium-Limousinenservice für besondere Anlässe.</p>
+            <a href="https://wa.me/201200720224" target="_blank" class="self-start mt-auto bg-primary text-secondary font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition-colors">
+              Jetzt buchen
+            </a>
+          </div>
+        </div>
+        
       </div>
     </section>
 
-    <section id="activities" class="card-grid activity-listings">
-      <h2>🌊 Marsa Alam Touren & Touristische Aktivitäten</h2>
-      <div class="activity-card" style="background-image: url('images/diving.jpg')" role="img" aria-label="Tauchen im Roten Meer, Marsa Alam">
-        <h3>Tauchen & Tauchtouren</h3>
-        <p>Erkunden Sie die atemberaubenden Korallenriffe und die Unterwasserwelt des Roten Meeres mit geführten Tauchtouren.</p>
-        <a href="https://wa.me/201200720224" target="_blank" class="btn card-btn">Anfragen</a>
-      </div>
+    <!-- Activities Section -->
+    <section id="activities" class="my-12 sm:my-16">
+      <h2 class="text-3xl sm:text-4xl font-bold font-raleway text-secondary text-center mb-10 pb-2 border-b-4 border-primary">
+        🌊 Marsa Alam Touren & Aktivitäten
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        
+        <!-- Activity Card 1 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-transform transform hover:-translate-y-1 hover:shadow-2xl">
+          <img class="w-full h-56 object-cover" src="images/diving.jpg" alt="Taucher erkundet ein Korallenriff im Roten Meer">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold font-raleway text-secondary mb-2">Tauchtouren</h3>
+            <p class="text-gray-600 mb-4 flex-grow">Entdecken Sie atemberaubende Korallenriffe und Meereslebewesen bei geführten Tauchausflügen.</p>
+            <a href="https://wa.me/201200720224" target="_blank" class="self-start mt-auto bg-primary text-secondary font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition-colors">
+              Anfragen
+            </a>
+          </div>
+        </div>
 
-      <div class="activity-card" style="background-image: url('images/snorkeling.jpg')" role="img" aria-label="Schnorchelausflug in den Gewässern von Marsa Alam">
-        <h3>Schnorchelausflüge</h3>
-        <p>Entdecken Sie bunte Fische und kristallklares Wasser mit unseren Schnorchelausflügen.</p>
-        <a href="https://wa.me/201200720224" target="_blank" class="btn card-btn">Anfragen</a>
-      </div>
+        <!-- Activity Card 2 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-transform transform hover:-translate-y-1 hover:shadow-2xl">
+          <img class="w-full h-56 object-cover" src="images/snorkeling.jpg" alt="Schnorchler schwimmt mit bunten Fischen in Marsa Alam">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold font-raleway text-secondary mb-2">Schnorchelausflüge</h3>
+            <p class="text-gray-600 mb-4 flex-grow">Entdecken Sie bunte Fische und kristallklares Wasser mit unseren von Experten geführten Schnorcheltouren.</p>
+            <a href="https://wa.me/201200720224" target="_blank" class="self-start mt-auto bg-primary text-secondary font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition-colors">
+              Anfragen
+            </a>
+          </div>
+        </div>
+        
+        <!-- Activity Card 3 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-transform transform hover:-translate-y-1 hover:shadow-2xl">
+          <img class="w-full h-56 object-cover" src="images/safari.jpg" alt="Quad-Bike-Abenteuer in der Marsa Alam Wüste bei Sonnenuntergang">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold font-raleway text-secondary mb-2">Wüstensafari</h3>
+            <p class="text-gray-600 mb-4 flex-grow">Quadfahren, Kamelreiten und Beduinen-Dinner in der unvergesslichen Wüstenlandschaft.</p>
+            <a href="https://wa.me/201200720224" target="_blank" class="self-start mt-auto bg-primary text-secondary font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition-colors">
+              Anfragen
+            </a>
+          </div>
+        </div>
 
-      <div class="activity-card" style="background-image: url('images/safari.jpg')" role="img" aria-label="Wüstensafari und Quadfahren in Marsa Alam">
-        <h3>Wüstensafari-Abenteuer</h3>
-        <p>Genießen Sie ein unvergessliches Wüstenabenteuer mit Quadfahren, Kamelreiten und Beduinen-Dinner.</p>
-        <a href="https://wa.me/201200720224" target="_blank" class="btn card-btn">Anfragen</a>
-      </div>
-
-      <div class="activity-card" style="background-image: url('images/boat.jpg')" role="img" aria-label="Rotes Meer Bootsfahrt und Ausflug">
-        <h3>Rotes Meer Bootsfahrten & Ausflüge</h3>
-        <p>Entspannte Kreuzfahrten auf dem Roten Meer mit Möglichkeiten zur Delfinbeobachtung und Inselbesuchen.</p>
-        <a href="https://wa.me/201200720224" target="_blank" class="btn card-btn">Anfragen</a>
+        <!-- Activity Card 4 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-transform transform hover:-translate-y-1 hover:shadow-2xl">
+          <img class="w-full h-56 object-cover" src="images/boat.jpg" alt="Bootsfahrt auf dem Roten Meer in der Nähe von Marsa Alam">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold font-raleway text-secondary mb-2">Bootsfahrten auf dem Roten Meer</h3>
+            <p class="text-gray-600 mb-4 flex-grow">Entspannende Kreuzfahrten auf dem Roten Meer mit Optionen zur Delfinbeobachtung und Inselbesuchen.</p>
+            <a href="https://wa.me/201200720224" target="_blank" class="self-start mt-auto bg-primary text-secondary font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition-colors">
+              Anfragen
+            </a>
+          </div>
+        </div>
+        
       </div>
     </section>
-    
-    <section id="social-proof" class="card-grid social-proof-section">
-      <h2>⭐ Von Reisenden Vertraut</h2>
-      <div class="rating-display">
-          <span class="stars">★★★★★</span>
-          <span class="score">4.8</span> basierend auf 
-          <span class="count">1,304</span> Bewertungen
-      </div>
-      <p class="section-subtext">Über 1.000 zufriedene Kunden. Hier ist, warum Reisende Waleed Marsa Alam Taxi wählen:</p>
 
-      <div class="review-card">
-        <h3>Zuverlässigkeit & Pünktlichkeit</h3>
-        <p>Unsere Fahrer sind immer pünktlich für Ihre Flughafentransfers und Touren und sorgen für einen stressfreien Start und Ende Ihrer Reise.</p>
-        <a href="https://www.tripadvisor.com/Search?q=marsa+alam+taxi" target="_blank" class="review-link"><i class="fab fa-tripadvisor"></i> Echte Bewertungen ansehen</a>
+    <!-- Social Proof Section -->
+    <section id="social-proof" class="my-12 sm:my-16 py-12 bg-white/90 rounded-lg shadow-xl">
+      <h2 class="text-3xl sm:text-4xl font-bold font-raleway text-secondary text-center mb-4">
+        ⭐ Von Reisenden Vertraut
+      </h2>
+      <div class="text-center text-lg text-gray-700 mb-4">
+        <span class="text-2xl text-primary">★★★★★</span>
+        <span class="font-bold">4.8</span> basierend auf 
+        <span class="font-bold text-secondary">1,304</span> Bewertungen
       </div>
+      <p class="text-center text-lg text-gray-600 mb-10 max-w-2xl mx-auto px-4">
+        Über 1.000 zufriedene Kunden. Hier ist der Grund, warum Reisende Waleed Marsa Alam Taxi wählen:
+      </p>
 
-      <div class="review-card">
-        <h3>Komfortable, Moderne Flotte</h3>
-        <p>Reisen Sie in sauberen, gut gewarteten und klimatisierten Fahrzeugen, egal ob Sie ein Taxi oder eine Luxuslimousine wählen.</p>
-        <a href="https://www.facebook.com/marsa.alam.taxi.2024" target="_blank" class="review-link"><i class="fab fa-facebook-f"></i> Fotos ansehen</a>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto px-4">
+        
+        <!-- Review Card 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary flex flex-col">
+          <h3 class="text-xl font-bold font-raleway text-secondary mb-3">Zuverlässigkeit & Pünktlichkeit</h3>
+          <p class="text-gray-600 mb-4 flex-grow">Unsere Fahrer sind immer pünktlich für Ihre Flughafentransfers und Touren und sorgen für einen stressfreien Start und Ende Ihrer Reise.</p>
+          <a href="https://www.tripadvisor.com/Search?q=marsa+alam+taxi" target="_blank" class="self-start mt-auto text-sm font-semibold text-secondary hover:text-primary transition-colors">
+            <i class="fab fa-tripadvisor"></i> Echte Bewertungen ansehen
+          </a>
+        </div>
+        
+        <!-- Review Card 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary flex flex-col">
+          <h3 class="text-xl font-bold font-raleway text-secondary mb-3">Komfortable, Moderne Flotte</h3>
+          <p class="text-gray-600 mb-4 flex-grow">Reisen Sie in sauberen, gut gewarteten und klimatisierten Fahrzeugen, egal ob Sie ein Taxi oder eine Luxuslimousine wählen.</p>
+          <a href="https://www.facebook.com/marsa.alam.taxi.2024" target="_blank" class="self-start mt-auto text-sm font-semibold text-secondary hover:text-primary transition-colors">
+            <i class="fab fa-facebook-f"></i> Fotos ansehen
+          </a>
+        </div>
+        
+        <!-- Review Card 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary flex flex-col">
+          <h3 class="text-xl font-bold font-raleway text-secondary mb-3">24/7 WhatsApp Support</h3>
+          <p class="text-gray-600 mb-4 flex-grow">Buchen Sie sofort und erhalten Sie schnelle, klare Kommunikation in Deutsch, Englisch, Tschechisch und Arabisch rund um die Uhr.</p>
+          <a href="https://wa.me/201200720224" target="_blank" class="self-start mt-auto text-sm font-semibold text-secondary hover:text-primary transition-colors">
+            <i class="fab fa-whatsapp"></i> Jetzt chatten
+          </a>
+        </div>
+
       </div>
-
-      <div class="review-card">
-        <h3>24/7 WhatsApp Support</h3>
-        <p>Buchen Sie sofort und erhalten Sie schnelle, klare Kommunikation auf Englisch, Italienisch, Deutsch, Polnisch und Arabisch rund um die Uhr.</p>
-        <a href="https://wa.me/201200720224" target="_blank" class="review-link"><i class="fab fa-whatsapp"></i> Jetzt chatten</a>
-      </div>
-
     </section>
+
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>&copy; 2024 Waleed Marsa Alam Taxi. Alle Rechte vorbehalten.</p>
-      <div class="footer-links">
-        <a href="https://wa.me/201200720224?text=Fahrt%20uber%20WhatsApp%20buchen" target="_blank" class="btn primary-btn">Jetzt buchen</a>
-        <a href="https://www.facebook.com/marsa.alam.taxi.2024" target="_blank" class="social-link">
-          <i class="fab fa-facebook-f"></i> Facebook
-        </a>
-        <span class="contact-info"><i class="fas fa-phone"></i> +20 120 072 0224</span>
+  <!-- Footer -->
+  <footer class="bg-secondary text-white mt-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div class="mb-4 md:mb-0">
+          <p>&copy; 2024 Waleed Marsa Alam Taxi. Alle Rechte vorbehalten.</p>
+        </div>
+        <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+          <a href="https://www.facebook.com/marsa.alam.taxi.2024" target="_blank" class="hover:text-primary transition-colors">
+            <i class="fab fa-facebook-f mr-1"></i> Facebook
+          </a>
+          <span class="contact-info">
+            <i class="fas fa-phone mr-1"></i> +20 120 072 0224
+          </span>
+          <a href="https://wa.me/201200720224?text=Fahrt%20uber%20WhatsApp%20buchen" target="_blank" class="bg-primary text-secondary font-bold px-5 py-2 rounded-full shadow-md hover:bg-yellow-400 transition-colors">
+            Jetzt buchen
+          </a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/201200720224?text=Fahrt%20uber%20WhatsApp%20buchen" class="floating-whatsapp" target="_blank" aria-label="Chatten Sie auf WhatsApp">
-    <i class="fab fa-whatsapp"></i>
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/201200720224?text=Fahrt%20uber%20WhatsApp%20buchen" class="fixed bottom-5 right-5 z-40 bg-whatsapp w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl animate-pulse" target="_blank" aria-label="Chatten Sie auf WhatsApp">
+    <i class="fab fa-whatsapp text-3xl"></i>
   </a>
   
   <script>
-    // Optional: Add JavaScript for navbar scroll effect here if needed
-    // NOTE: The Google Translate scripts have been intentionally removed.
-    document.addEventListener('DOMContentLoaded', function() {
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // --- Mobile Menu Toggle ---
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('icon-open');
+      const iconClose = document.getElementById('icon-close');
+      
+      menuButton.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden', !isHidden);
+        iconOpen.classList.toggle('hidden', !isHidden);
+        iconClose.classList.toggle('hidden', isHidden);
+      });
+      
+      // --- Navbar Scroll Effect ---
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          navbar.classList.add('bg-white/95', 'shadow-lg');
+        } else {
+          navbar.classList.remove('bg-white/95', 'shadow-lg');
         }
+      });
+      
+      // --- Language Switcher Sync ---
+      const currentFile = window.location.pathname.split('/').pop() || 'index-de.html';
+      const desktopSwitcher = document.getElementById('language-switcher-desktop');
+      const mobileSwitcher = document.getElementById('language-switcher-mobile');
+      
+      // Set the correct option as selected
+      [desktopSwitcher, mobileSwitcher].forEach(switcher => {
+        if(switcher) {
+          for (let i = 0; i < switcher.options.length; i++) {
+            if (switcher.options[i].value === currentFile) {
+              switcher.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      });
     });
   </script>
 </body>
