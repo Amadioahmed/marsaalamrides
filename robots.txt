@@ -1,4 +1,1 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://marsaalam.site/sitemap.xml
+User-agent: *Allow: /Sitemap: https://www.google.com/search?q=https://marsaalam.site/sitemap.xml
